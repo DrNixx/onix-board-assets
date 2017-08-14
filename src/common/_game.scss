@@ -1,0 +1,202 @@
+@import 'functions';
+
+.game-play {
+    .board-container {
+        display: inline-block;
+        margin-right: 20px;
+        position: relative;
+        vertical-align: top;
+    }
+
+    .controls {
+        display: inline-block;
+        max-width: 100% !important;
+        vertical-align: top;
+        width: 500px;
+
+        .tab {
+            width: 100%;
+        }
+
+        .tab-content {
+            width: 100%;
+        }
+
+        .tab-pane {
+            position: relative;
+            height: 400px;
+            width: 100%;
+        }
+
+        .ui-moves {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 90px;
+        }
+
+        .ui-captures {
+            width: 100%;
+            height: 75px;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            padding: 5px 19px;
+            border-top: solid 1px #d5d0bd;
+
+
+            .piece {
+                display: inline-block;
+            }
+        }
+
+        .ui-captures-white,
+        .ui-captures-black {
+            margin-right: 2px;
+            margin-top: 2px;
+            height: 30px;
+        }
+
+        .ui-captures-white {
+            // abstract
+        }
+
+        .ui-captures-black {
+            // abstract
+        }
+    }
+
+    .pgn-wrapper {
+        height: 100%;
+        position: relative;
+
+        .pgn-text {
+            width: 100%;
+            height: 100%;
+            padding-bottom: 40px;
+
+            textarea {
+                height: 100%;
+                width: 100%;
+            }
+        }
+
+        .pgn-command {
+            bottom: 0;
+            left: 0;
+            position: absolute;
+            width: 100%;
+        }
+    }
+}
+
+@media only screen and (min-width: 1280px) {
+  .game-play {
+    &.size1 {
+      .controls {
+        width: calc(100% - 214px);
+      }
+    }
+
+    &.size2 {
+      .controls {
+        width: calc(100% - 300px);
+      }
+    }
+
+    &.size3 {
+      .controls {
+        width: calc(100% - 380px);
+      }
+    }
+
+    &.size4 {
+      .controls {
+        width: calc(100% - 470px);
+      }
+    }
+
+    &.size5 {
+      .controls {
+        width: calc(100% - 560px);
+
+        .tab-pane {
+          height: 470px;
+        }
+      }
+    }
+
+    &.size6 {
+      .controls {
+        width: calc(100% - 730px);
+
+        .tab-pane {
+          height: 645px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .game-play {
+    &.size1 {
+      .board-container {
+
+      }
+
+      .controls {
+
+      }
+    }
+
+    &.size2 {
+      .board-container {
+
+      }
+
+      .controls {
+
+      }
+    }
+
+    &.size3 {
+      .board-container {
+
+      }
+
+      .controls {
+
+      }
+    }
+
+    &.size4 {
+      .board-container {
+
+      }
+
+      .controls {
+
+      }
+    }
+
+    &.size5 {
+      .board-container {
+
+      }
+
+      .controls {
+
+      }
+    }
+
+    &.size6 {
+      .board-container {
+
+      }
+
+      .controls {
+
+      }
+    }
+  }
+}
