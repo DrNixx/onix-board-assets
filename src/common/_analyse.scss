@@ -1,0 +1,56 @@
+.analyse {
+    width: 100%;
+
+    .graph-container {
+        width: calc(100% - 255px);
+        display: inline-block;
+    }
+
+    .graph-info {
+        width: 250px;
+        height: 100%;
+        display: inline-block;
+    }
+
+    .white {
+        color: #000;
+    }
+
+    .black {
+        color: #fff;
+    }
+
+    .white, .black {
+        height: 200px;
+        text-align: right;
+        padding-top: 10px;
+
+        & > span {
+            display: block;
+            margin: 0 auto;
+            width: 100%;
+
+            span {
+                display: inline-block;
+                font-weight: bold;
+                min-width: 2em;
+            }
+        }
+    }
+}
+
+@media (max-width: 991px) {
+    .analyse {
+        .graph-container {
+            width: 100%;
+            display: block;
+        }
+
+        .graph-info {
+            width: 100%;
+            height: auto;
+            display: block;
+            padding: .5em;
+        }
+    }
+}
