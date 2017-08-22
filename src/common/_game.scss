@@ -13,7 +13,7 @@
         max-width: 100% !important;
         vertical-align: top;
         width: 500px;
-
+        
         .tab {
             width: 100%;
         }
@@ -90,6 +90,54 @@
 }
 
 @media only screen and (min-width: 1280px) {
+  .game-play {
+    &.size1 {
+      .controls {
+        width: calc(100% - 214px);
+      }
+    }
+
+    &.size2 {
+      .controls {
+        width: calc(100% - 300px);
+      }
+    }
+
+    &.size3 {
+      .controls {
+        width: calc(100% - 380px);
+      }
+    }
+
+    &.size4 {
+      .controls {
+        width: calc(100% - 470px);
+      }
+    }
+
+    &.size5 {
+      .controls {
+        width: calc(100% - 560px);
+
+        .tab-pane {
+          height: 470px;
+        }
+      }
+    }
+
+    &.size6 {
+      .controls {
+        width: calc(100% - 730px);
+
+        .tab-pane {
+          height: 645px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 1024px) {
   .game-play {
     &.size1 {
       .controls {
