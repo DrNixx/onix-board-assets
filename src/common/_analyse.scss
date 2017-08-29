@@ -39,6 +39,14 @@
     }
 }
 
+.analysis-item {
+    &.active {
+        & > div {
+            border-left: 8px solid #ff8719;
+        }
+    }
+}
+
 .analysis-inprogress {
     display: inline-block;
     padding-left: 30px;
