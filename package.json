@@ -1,6 +1,6 @@
 {
   "name": "onix-board-assets",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Chess board assets",
   "main": "index.js",
   "scripts": {
@@ -25,11 +25,11 @@
   "homepage": "https://github.com/DrNixx/onix-board-assets#readme",
   "devDependencies": {
     "del": "^3.0.0",
-    "gulp": "^3.9.1",
-    "gulp-cssmin": "^0.1.7",
-    "gulp-rename": "^1.2.3",
-    "gulp-sass": "^4.0.1",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
     "gulp-uglify": "^2.1.2",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.3"
   }
 }

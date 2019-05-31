@@ -1,10 +1,12 @@
 ﻿"use strict";
 
-var gulp = require("gulp"),
+const gulp = require('gulp');
+
+const { series, parallel } = require('gulp'),
     rimraf = require("rimraf"),
     rename = require('gulp-rename'),
     sass = require("gulp-sass"),
-    cssmin = require("gulp-cssmin"),
+    cleanCSS = require('gulp-clean-css'),
     del = require('del');;
 
 var paths = {
@@ -14,23 +16,27 @@ var paths = {
     deploy: "../web/boards/"
 };
 
-gulp.task('build:public', function() {
+function set_public(cb) {
   paths.dest = paths.build;
-});
+  cb();
+};
 
-gulp.task('build:produce', function() {
+function set_produce(cb) {
   paths.dest = paths.produce;
-});
+  cb();
+};
 
-gulp.task('build:deploy', function() {
+function set_deploy(cb) {
   paths.dest = paths.deploy;
-});
+  cb();
+};
 
-gulp.task('clean', function() {
-  return del.sync(paths.dest, {force: true});
-});
+function clean(cb) {
+  del.sync(paths.dest, {force: true});
+  cb();
+};
 
-gulp.task("bg", function() {
+function bg() {
     gulp.src('./src/bg/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(gulp.dest(paths.dest + '/bg'));
 
@@ -38,11 +44,11 @@ gulp.task("bg", function() {
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest(paths.dest + '/bg'))
         .pipe(rename({ suffix: ".min" }))
-        .pipe(cssmin())
+        .pipe(cleanCSS())
         .pipe(gulp.dest(paths.dest + '/bg')); 
-});
+};
 
-gulp.task("pieces", function() {
+function pieces() {
     gulp.src('./src/pieces/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(gulp.dest(paths.dest + '/pieces'));
 
@@ -50,11 +56,11 @@ gulp.task("pieces", function() {
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest(paths.dest + '/pieces'))
         .pipe(rename({ suffix: ".min" }))
-        .pipe(cssmin())
+        .pipe(cleanCSS())
         .pipe(gulp.dest(paths.dest + '/pieces')); 
-});
+};
 
-gulp.task("squares", function() {
+function squares() {
     gulp.src('./src/squares/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(gulp.dest(paths.dest + '/squares'));
 
@@ -62,27 +68,30 @@ gulp.task("squares", function() {
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest(paths.dest + '/squares'))
         .pipe(rename({ suffix: ".min" }))
-        .pipe(cssmin())
+        .pipe(cleanCSS())
         .pipe(gulp.dest(paths.dest + '/squares')); 
-});
+};
 
-gulp.task("common", function () {
+function common() {
     return gulp.src('./src/common.scss')
         .pipe(sass().on("error", sass.logError))
         .pipe(gulp.dest(paths.dest))
         .pipe(rename({ suffix: ".min" }))
-        .pipe(cssmin())
+        .pipe(cleanCSS())
         .pipe(gulp.dest(paths.dest));
-});
+};
 
-gulp.task("build", ['build:public', 'clean', 'common', 'pieces', 'squares', 'bg'], function() {
+let build = series(set_public, clean, parallel(common, pieces, squares, bg));
+gulp.task("build", build, function() {
     console.log('Building public...');
 });
 
-gulp.task("produce", ['build:produce', 'clean', 'common', 'pieces', 'squares', 'bg'], function() {
+let produce = series(set_produce, clean, parallel(common, pieces, squares, bg));
+gulp.task("produce", produce, function() {
     console.log('Building produce...');
 });
 
-gulp.task("deploy", ['build:deploy', 'clean', 'common', 'pieces', 'squares', 'bg'], function() {
+let deploy = series(set_deploy, clean, parallel(common, pieces, squares, bg));
+gulp.task("deploy", deploy, function() {
     console.log('Building deploy...');
 });
