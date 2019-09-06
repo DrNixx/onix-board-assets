@@ -1,12 +1,21 @@
 ﻿"use strict";
 
 const gulp = require('gulp');
+const sass = require("gulp-sass");
+const syntax = require('postcss-scss');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const assets = require('postcss-assets')({basePath: 'public/', loadPaths: ['static/img/', 'static/fonts/']});
+const fonts = require('postcss-font-magician')();
+const cssnano = require('cssnano')();
+const inlineSVG = require('postcss-inline-svg')();
+const sourcemaps = require('gulp-sourcemaps');
+const cache = require('gulp-cached');
+const rename = require('gulp-rename');
+const cleanCSS = require('gulp-clean-css');
+const del = require('del');
 
-const { series, parallel } = require('gulp'),
-    rename = require('gulp-rename'),
-    sass = require("gulp-sass"),
-    cleanCSS = require('gulp-clean-css'),
-    del = require('del');;
+const { series, parallel } = require('gulp');
 
 var paths = {
     dest: "./public/assets/",
@@ -48,11 +57,16 @@ function bg() {
 };
 
 function pieces() {
+    var pre = [assets, inlineSVG];
+    var post = [autoprefixer, fonts];
+
     gulp.src('./src/pieces/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(gulp.dest(paths.dest + '/pieces'));
 
     return gulp.src(['./src/pieces/*.scss', '!./src/pieces/_*.scss'])
+        .pipe(postcss(pre, {syntax: syntax}))
         .pipe(sass().on("error", sass.logError))
+        .pipe(postcss(post))
         .pipe(gulp.dest(paths.dest + '/pieces'))
         .pipe(rename({ suffix: ".min" }))
         .pipe(cleanCSS())
