@@ -3,7 +3,6 @@
 const gulp = require('gulp');
 
 const { series, parallel } = require('gulp'),
-    rimraf = require("rimraf"),
     rename = require('gulp-rename'),
     sass = require("gulp-sass"),
     cleanCSS = require('gulp-clean-css'),
