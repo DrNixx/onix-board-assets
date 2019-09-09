@@ -1,0 +1,19 @@
+.is2d {
+    .white {
+        &.pawn { background-image: url('alpha/wP.svg') }
+        &.knight { background-image: url('alpha/wN.svg') }
+        &.bishop { background-image: url('alpha/wB.svg') }
+        &.rook { background-image: url('alpha/wR.svg') }
+        &.queen { background-image: url('alpha/wQ.svg') }
+        &.king { background-image: url('alpha/wK.svg') }
+    }
+
+    .black {
+        &.pawn { background-image: url('alpha/bP.svg') }
+        &.knight { background-image: url('alpha/bN.svg') }
+        &.bishop { background-image: url('alpha/bB.svg') }
+        &.rook { background-image: url('alpha/bR.svg') }
+        &.queen { background-image: url('alpha/bQ.svg') }
+        &.king { background-image: url('alpha/bK.svg') }
+    }   
+}
