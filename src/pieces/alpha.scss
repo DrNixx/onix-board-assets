@@ -1,19 +1,4 @@
+@import "functions";
 .is2d {
-    .white {
-        &.pawn { background-image: svg-load('alpha/wP.svg') }
-        &.knight { background-image: svg-load('alpha/wN.svg') }
-        &.bishop { background-image: svg-load('alpha/wB.svg') }
-        &.rook { background-image: svg-load('alpha/wR.svg') }
-        &.queen { background-image: svg-load('alpha/wQ.svg') }
-        &.king { background-image: svg-load('alpha/wK.svg') }
-    }
-
-    .black {
-        &.pawn { background-image: svg-load('alpha/bP.svg') }
-        &.knight { background-image: svg-load('alpha/bN.svg') }
-        &.bishop { background-image: svg-load('alpha/bB.svg') }
-        &.rook { background-image: svg-load('alpha/bR.svg') }
-        &.queen { background-image: svg-load('alpha/bQ.svg') }
-        &.king { background-image: svg-load('alpha/bK.svg') }
-    }   
+    @include makeSet("alpha");
 }

@@ -44,6 +44,13 @@ function clean(cb) {
   cb();
 };
 
+function vendor() {
+    return gulp.src([
+        './node_modules/chessground/dist/*.*'
+        ], { base: 'node_modules' })
+        .pipe(gulp.dest(paths.dest + '/vendor/'));
+}
+
 function bg() {
     gulp.src('./src/bg/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(gulp.dest(paths.dest + '/bg'));
@@ -57,8 +64,9 @@ function bg() {
 };
 
 function pieces() {
-    var pre = [assets, inlineSVG];
-    var post = [autoprefixer, fonts];
+    var pre = [assets];
+    var post = [inlineSVG, autoprefixer, fonts];
+    var compress = [cssnano];
 
     gulp.src('./src/pieces/**/*.{png,jpg,jpeg,gif,svg}')
         .pipe(gulp.dest(paths.dest + '/pieces'));
@@ -69,6 +77,7 @@ function pieces() {
         .pipe(postcss(post))
         .pipe(gulp.dest(paths.dest + '/pieces'))
         .pipe(rename({ suffix: ".min" }))
+        //.pipe(postcss(compress))
         .pipe(cleanCSS())
         .pipe(gulp.dest(paths.dest + '/pieces')); 
 };
@@ -94,7 +103,7 @@ function common() {
         .pipe(gulp.dest(paths.dest));
 };
 
-let build = series(set_public, clean, parallel(common, pieces, squares, bg));
+let build = series(set_public, clean, parallel(common, pieces, squares, bg, vendor));
 gulp.task("build", build, function() {
     console.log('Building public...');
 });

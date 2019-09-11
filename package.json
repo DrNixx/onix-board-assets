@@ -25,6 +25,7 @@
   "homepage": "https://github.com/DrNixx/onix-board-assets#readme",
   "devDependencies": {
     "autoprefixer": "^9.6.1",
+    "chessground": "^7.6.10",
     "cssnano": "^4.1.10",
     "del": "^3.0.0",
     "gulp": "^4.0.2",

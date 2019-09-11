@@ -1,3 +1,4 @@
 @import "functions";
-
-@include makeSet("merida");
+.is2d {
+    @include makeSet("merida");
+}

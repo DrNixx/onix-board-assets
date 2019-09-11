@@ -1,0 +1,22 @@
+@import "functions";
+
+.is2d {
+    @include makeSet("alpha", false);
+    @include makeSet("california", false);
+    @include makeSet("cburnett", false);
+    @include makeSet("chess7", false);
+    @include makeSet("chessnut", false);
+    @include makeSet("companion", false);
+    @include makeSet("fantasy", false);
+    @include makeSet("kosal", false);
+    @include makeSet("leipzig", false);
+    @include makeSet("letter", false);
+    @include makeSet("maestro", false);
+    @include makeSet("merida", false);
+    @include makeSet("pirouetti", false);
+    @include makeSet("pixel", false);
+    @include makeSet("reillycraig", false);
+    @include makeSet("riohacha", false);
+    @include makeSet("shapes", false);
+    @include makeSet("spatial", false);
+}

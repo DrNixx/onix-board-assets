@@ -1,3 +1,4 @@
 @import "functions";
-
-@include makeSet("leipzig");
+.is2d {
+    @include makeSet("leipzig");
+}
