@@ -1,0 +1,28 @@
+{% extends "./ext/base.nunj" %}
+{% from "parts/sliderEpisodes.nunj" import sliderEpisodes %}
+{% block title %}404 {{ super() }}{% endblock title %}
+
+{% block content %}
+
+	<section class="section error-404">
+		<img class="error-404__cover _1920" data-src="media/img/demo/404/1920_error_04.jpg">
+		<img class="error-404__cover _1280" data-src="media/img/demo/404/1280_error_04.jpg">
+		<img class="error-404__cover _1024" data-src="media/img/demo/404/1024_error_04.jpg">
+		<img class="error-404__cover _768" data-src="media/img/demo/404/768_error_04.jpg">
+		<img class="error-404__cover _320" data-src="media/img/demo/404/320_error_04.jpg">
+		<div class="error-404__container">
+			<div class="container">
+				<div class="grid grid_center">
+					<div class="col">
+						<div class="error-404__title">Cтраница не найдена</div>
+						<a href="#" class="error-404__btn btn _big">
+							<span class="btn__text">Вернуться на главную</span>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	{{ sliderEpisodes('Где круто отдохнуть на&nbsp;100$') }}
+
+{% endblock content %}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<!-- Client-side programming by sborkaproject.com -->
+		<meta charset="utf-8" />
+		<title>{% block title %}| Пятница{% endblock %}</title>
+		<!-- <link rel="shortcut icon" href="" /> -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+		<link href="https://fonts.googleapis.com/css?family=Roboto:400,600,700" rel="stylesheet">
+
+		<link rel="apple-touch-icon" sizes="57x57" href="media/img/favicons/apple-icon-57x57.png">
+		<link rel="apple-touch-icon" sizes="60x60" href="media/img/favicons/apple-icon-60x60.png">
+		<link rel="apple-touch-icon" sizes="72x72" href="media/img/favicons/apple-icon-72x72.png">
+		<link rel="apple-touch-icon" sizes="76x76" href="media/img/favicons/apple-icon-76x76.png">
+		<link rel="apple-touch-icon" sizes="114x114" href="media/img/favicons/apple-icon-114x114.png">
+		<link rel="apple-touch-icon" sizes="120x120" href="media/img/favicons/apple-icon-120x120.png">
+		<link rel="apple-touch-icon" sizes="144x144" href="media/img/favicons/apple-icon-144x144.png">
+		<link rel="apple-touch-icon" sizes="152x152" href="media/img/favicons/apple-icon-152x152.png">
+		<link rel="apple-touch-icon" sizes="180x180" href="media/img/favicons/apple-icon-180x180.png">
+		<link rel="icon" type="image/png" sizes="192x192"  href="media/img/favicons/android-icon-192x192.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="media/img/favicons/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="96x96" href="media/img/favicons/favicon-96x96.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="media/img/favicons/favicon-16x16.png">
+		<link rel="manifest" href="media/img/favicons/manifest.json">
+		<meta name="msapplication-TileColor" content="#000000">
+		<meta name="msapplication-TileImage" content="media/img/favicons/ms-icon-144x144.png">
+		<meta name="theme-color" content="#000000">
+
+		{% block stylesheets %}
+			<link rel="stylesheet" href="media/css/screen.css" />
+		{% endblock stylesheets %}
+	</head>
+	<body data-api="" data-svg-url="media/svg/sprite.svg"{% if dataPage %} data-page="{{ dataPage }}"{% endif %}>
+
+		<div class="wrapper {{ wrapperClass }}">
+			{% block nav %}
+				<div class="nav-container" data-hide-on-scroll>
+					{% include '../parts/nav.nunj' %}
+				</div>
+			{% endblock nav %}
+
+			{% block content %}
+			{% endblock content %}
+			<div class="wrapper__push"></div>
+		</div>
+
+		{% include '../parts/footer.nunj' %}
+
+		<div class="information" data-block-closer-target="info" data-block-closer-api="/">
+			<div class="container-fluid">
+				<div class="information__text">Friday.ru отслеживает анонимные визиты с использованием cookies. Подробнее в <a href="#" target="_blank">«условиях использования сайта»</a>. Закройте это сообщение, чтобы подтвердить, что вы согласны.</div>
+				<svg class="information__close icon-close" data-block-closer>
+					<use xlink:href="#icon-close"></use>
+				</svg>
+			</div>
+		</div>
+
+		<script>
+			window.fbAsyncInit = function() {
+				FB.init({
+					appId            : '1594975140750982',
+					autoLogAppEvents : true,
+					xfbml            : true,
+					version          : 'v2.11'
+				});
+			};
+			(function(d, s, id){
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (d.getElementById(id)) {return;}
+				js = d.createElement(s); js.id = id;
+				js.src = "https://connect.facebook.net/ru_RU/sdk.js";
+				fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
+		{% block scripts %}
+			<script src="media/js/bundle.js"></script>
+		{% endblock scripts %}
+	</body>
+</html>
