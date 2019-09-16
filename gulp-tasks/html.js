@@ -11,7 +11,9 @@ import * as extensions from '../src/templates/lib/extensions.js';
 import filters from '../src/templates/lib/filters.js';
 import functions from '../src/templates/lib/functions.js';
 import gulpif from 'gulp-if';
+
 const globalData = require('../global-data.json');
+const pieces = require('../src/pieces/pieces.json');
 
 export default function html() {
 	return gulp
@@ -34,7 +36,8 @@ export default function html() {
 					{
 						DEVELOP: !PRODUCTION,
 					},
-					globalData
+					globalData,
+					pieces
 				),
 				extensions,
 				filters,

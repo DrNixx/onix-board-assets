@@ -1,0 +1,9 @@
+@each $color, $file in $board-files {
+  .#{$color} {
+    &.is2d, & .is2d {
+      cg-board {
+        background-image: url(#{$file});
+      }
+    }
+  }
+}

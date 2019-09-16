@@ -23,6 +23,9 @@ export default function pieces() {
     gulp.src(PATHS.src.pieces)
         .pipe(gulp.dest(PATHS.build.pieces));
 
+    gulp.src(PATHS.src.piecesjson)
+        .pipe(gulp.dest(PATHS.build.pieces));
+
     return gulp.src(PATHS.src.piecescss)
         .pipe(postcss(pre, {syntax: syntax}))
         .pipe(sass().on("error", sass.logError))

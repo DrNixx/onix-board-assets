@@ -2,6 +2,11 @@
 {% from "parts/piecesBoard.nunj" import piecesBoard %}
 {% block title %}Pieces example {{ super() }}{% endblock title %}
 
+{% block stylesheets %}
+	{{ super() }}
+	<link rel="stylesheet" href="assets/pieces/external.css" />
+{% endblock stylesheets %}
+
 {% block content %}
 	<div class="is2d color-blue">
 	{% for piece in pieceFaces %}

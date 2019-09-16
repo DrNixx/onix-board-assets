@@ -1,0 +1,19 @@
+{
+    "board-files": {
+        "blue-marble": "blue-marble/board.png",
+        "cedar": "cedar/board.png",
+        "color-blue": "color-blue/board.svg",
+        "color-brown": "color-brown/board.svg",
+        "color-gray": "color-gray/board.png",
+        "color-green": "color-green/board.svg",
+        "color-purple": "color-purple/board.svg",
+        "eml": "eml/board.png",
+        "granite": "granite/board.png",
+        "green-marble": "green-marble/board.png",
+        "red-marble": "red-marble/board.png",
+        "red-wood": "red-wood/board.png",
+        "rust-metal": "rust-metal/board.png",
+        "tan-marble": "tan-marble/board.png",
+        "walnut": "walnut/board.png"
+    }
+}

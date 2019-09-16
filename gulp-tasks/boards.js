@@ -1,5 +1,6 @@
 import gulp from 'gulp';
 import sass from 'gulp-sass';
+import sassVars from 'gulp-sass-vars';
 import syntax from 'postcss-scss';
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
@@ -15,6 +16,8 @@ import cleanCSS from 'gulp-clean-css';
 import { PRODUCTION } from '../config';
 import PATHS from '../paths';
 
+const files = require('../src/board/boards.json');
+
 export default function boards() {
     var pre = [assets({basePath: 'public/', loadPaths: ['static/img/', 'static/fonts/']})];
     var post = [inlineSVG, autoprefixer, fonts];
@@ -23,8 +26,12 @@ export default function boards() {
     gulp.src(PATHS.src.boards)
         .pipe(gulp.dest(PATHS.build.boards));
 
+    gulp.src(PATHS.src.boardsjson)
+        .pipe(gulp.dest(PATHS.build.boards));
+
     return gulp.src(PATHS.src.boardscss)
         .pipe(postcss(pre, {syntax: syntax}))
+        .pipe(sassVars(files, { verbose: true }))
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss(post))
         .pipe(gulp.dest(PATHS.build.boards))

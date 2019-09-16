@@ -1,6 +1,24 @@
-@import "vars";
-@import "functions";
-
 @import '../../node_modules/breakpoint-sass/stylesheets/breakpoint';
-
+@import 'media-queries';
+@import "vars";
+@import "variables";
+@import "uniboard";
+@import "functions";
+@import "board-2d";
+@import "coords";
 @import '../vendor/chessground/chessground';
+
+
+.main-board {
+    @extend %square;
+    &__preload {
+        position: absolute;
+    }
+    .cg-wrap {
+        @extend %abs-100;
+    }
+}
+  
+.mini-board {
+    @extend %square;
+}

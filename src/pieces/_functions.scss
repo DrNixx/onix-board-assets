@@ -10,7 +10,7 @@
 }
 
 $pcolors: ("white": "w", "black": "b");
-$pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rock": "R", "queen": "Q", "king": "K");
+$pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rook": "R", "queen": "Q", "king": "K");
 
 @mixin makeSet($name, $load: true) {
     .#{$name} {

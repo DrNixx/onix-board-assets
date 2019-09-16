@@ -1,0 +1,23 @@
+{
+    "pieceFaces": [
+        {"code": "alpha", "name": "Alpha"},
+        {"code": "california", "name": "California"},
+        {"code": "cburnett", "name": "Cburnett"},
+        {"code": "chess7", "name": "Chess7"},
+        {"code": "chessnut", "name": "Chessnut"},
+        {"code": "companion", "name": "Companion"},
+        {"code": "fantasy", "name": "Fantasy"},
+        {"code": "fresca", "name": "Fresca"},
+        {"code": "kosal", "name": "Kosal"},
+        {"code": "leipzig", "name": "Leipzig"},
+        {"code": "letter", "name": "Letter"},
+        {"code": "maestro", "name": "Maestro"},
+        {"code": "merida", "name": "Merida"},
+        {"code": "pirouetti", "name": "Pirouetti"},
+        {"code": "pixel", "name": "Pixel"},
+        {"code": "reillycraig", "name": "Reilly Craig"},
+        {"code": "riohacha", "name": "Riohacha"},
+        {"code": "shapes", "name": "Shapes"},
+        {"code": "spatial", "name": "Spatial"}
+    ]
+}
