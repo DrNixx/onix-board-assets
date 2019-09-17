@@ -5,10 +5,10 @@ const assets = base + '/assets'
 
 export default {
 	build: {
-		html: base,
-		assets: assets,
+		html: base + '/',
+		assets: assets + '/',
 		pieces: assets + '/pieces/',
-		boards: assets + '/boards',
+		boards: assets + '/boards/',
 		images: base + '/media/img/',
 		fonts: base + '/media/fonts/',
 		sprites: base + '/media/img/sprites/',
@@ -24,6 +24,13 @@ export default {
 		boards: './src/board/**/*.{png,jpg,jpeg,gif,svg}',
 		boardsjson: './src/board/boards.json',
 		boardscss: ['./src/board/*.scss', '!./src/board/_*.scss'],
+		common: ['./src/common/*.scss', '!./src/common/_*.scss'],
+	},
+	watch: {
+		nunj: 'src/templates/**/*.nunj',
+		pieces: 'src/pieces/**/*.*',
+		boards: 'src/board/**/*.*',
+		common: 'src/common/**/*.scss',
 	},
 	clean: base + '/*',
 	deploy: '../web/boards/',

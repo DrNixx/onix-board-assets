@@ -1,4 +1,5 @@
 import gulp from 'gulp';
+import gulpif from 'gulp-if';
 import sass from 'gulp-sass';
 import syntax from 'postcss-scss';
 import postcss from 'gulp-postcss';
@@ -31,8 +32,23 @@ export default function pieces() {
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss(post))
         .pipe(gulp.dest(PATHS.build.pieces))
-        .pipe(rename({ suffix: ".min" }))
-        //.pipe(postcss(compress))
-        .pipe(cleanCSS())
-        .pipe(gulp.dest(PATHS.build.pieces)); 
+        .pipe(
+            gulpif(
+				PRODUCTION,
+				rename({ suffix: ".min" })
+			)
+        )
+        .pipe(
+            gulpif(
+				PRODUCTION,
+                cleanCSS()
+                //postcss(compress)
+			)
+        )
+        .pipe(
+            gulpif(
+				PRODUCTION,
+				gulp.dest(PATHS.build.pieces)
+			)
+        );
 }

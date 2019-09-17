@@ -1,0 +1,19 @@
+@import "mixins";
+
+%square {
+    position: relative;
+    display: block;
+    height: 0;
+    padding-bottom: 100%;
+    width: 100%;
+}
+
+%box-shadow {
+    @include box-shadow;
+}
+
+%abs-100 {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}

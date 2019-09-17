@@ -1,0 +1,17 @@
+﻿@import "extends";
+@import "functions";
+@import '../vendor/chessground/chessground';
+
+.main-board {
+    @extend %square;
+    &__preload {
+        position: absolute;
+    }
+    .cg-wrap {
+        @extend %abs-100;
+    }
+}
+  
+.mini-board {
+    @extend %square;
+}

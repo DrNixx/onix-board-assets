@@ -1,7 +1,7 @@
-@import 'coords-colors';
+@import "../../node_modules/breakpoint-sass/stylesheets/breakpoint";
+@import "uniboard";
 
 coords {
-
   /* handle hidden coords */
   .coords-no & { display: none }
 
