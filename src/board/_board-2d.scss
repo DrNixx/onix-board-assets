@@ -1,8 +1,8 @@
-@each $color, $file in $board-files {
-  .#{$color} {
+@each $board in $boardFiles {
+  .#{map-get($board, "code")} {
     &.is2d, & .is2d {
       cg-board {
-        background-image: url(#{$file});
+        background-image: url(#{map-get($board, "url")});
       }
     }
   }
