@@ -32,7 +32,7 @@ export default function boards() {
 
     return gulp.src(PATHS.src.boardscss)
         .pipe(postcss(pre, {syntax: syntax}))
-        .pipe(sassVars(boardFiles, { verbose: true }))
+        .pipe(sassVars(boardFiles, { verbose: false }))
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss(post))
         .pipe(gulp.dest(PATHS.build.boards))

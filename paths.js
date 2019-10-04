@@ -19,6 +19,7 @@ export default {
 		templates: './src/templates/',
 		nunj: 'src/templates/*.nunj',
 		pieces: './src/pieces/**/*.{png,jpg,jpeg,gif,svg}',
+		piecesroot: './src/pieces/',
 		piecesjson: './src/pieces/pieces.json',
 		piecescss: ['./src/pieces/*.scss', '!./src/pieces/_*.scss'], 
 		boards: './src/board/**/*.{png,jpg,jpeg,gif,svg}',
