@@ -58,7 +58,7 @@ coords {
   }
 }
 
-@include coords-colors;
+//@include coords-colors;
 
 /* handle outer coords */
 @include breakpoint($mq-col2-uniboard) {

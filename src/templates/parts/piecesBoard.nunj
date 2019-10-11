@@ -1,7 +1,7 @@
 {% macro piecesBoard(code, name) %}
 	<h2>{{ name }}</h2>
 	
-	<div class="main-board {{ code }}" style="width: 480px; height: 480px; padding-bottom: 0;">
+	<div class="main-board {{ code }}">
 		<div id="{{ code }}" class="cg-wrap"></div>
 	</div>
 	

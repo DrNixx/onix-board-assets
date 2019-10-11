@@ -15,3 +15,7 @@
 .mini-board {
     @extend %square;
 }
+
+coords {
+    .coords-no & { display: none }
+}
