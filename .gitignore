@@ -1,10 +1,10 @@
-node_modules
-built
-dist
+/node_modules
+/built
+/dist
+/public
 .vscode
 /**/*.css
 /**/*.min.css
 /**/*.css.map
-/public/assets
 
 npm-debug.log

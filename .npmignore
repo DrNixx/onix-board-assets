@@ -1,6 +1,6 @@
 /node_modules
 /samples
-/src/scss
+/public
 /test
 /tsconfig.json
 /*.config.js
