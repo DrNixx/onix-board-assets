@@ -1,0 +1,7 @@
+@import "functions";
+
+.is2d {
+    @each $face in $pieceFaces {
+        @include makeSet(map-get($face, "code"), false);
+    }
+}

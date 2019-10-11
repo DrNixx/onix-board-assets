@@ -1,0 +1,12 @@
+{% extends "./ext/base.nunj" %}
+{% from "parts/piecesBoard.nunj" import piecesBoard %}
+{% block title %}Pieces example {{ super() }}{% endblock title %}
+
+{% block content %}
+	<div class="is2d color-blue">
+	{% for piece in pieceFaces %}
+		<link rel="stylesheet" href="assets/pieces/{{ piece.code }}.css" />
+		{{ piecesBoard(piece.code, piece.name) }}
+	{% endfor %}
+	</div>
+{% endblock content %}

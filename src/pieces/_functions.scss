@@ -1,87 +1,25 @@
-﻿@mixin piece($image) {
-    .pimg, .pshd {
-        background-image: url($image);
+﻿@mixin piece($set, $color, $piece, $code, $load: true) {
+    &.#{$piece} {
+        @if $load {
+            background-image: svg-load("#{$set}/#{$color}#{$code}.svg"); 
+        } @else {
+            background-image: url("#{$set}/#{$color}#{$code}.svg"); 
+        }
+        
     }
 }
 
-@mixin makeSet($name) {
-    .size1 {
-        @include piece("#{$name}/set20.png");
-    }
+$pcolors: ("white": "w", "black": "b");
+$pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rook": "R", "queen": "Q", "king": "K");
 
-    .size2 {
-        @include piece("#{$name}/set30.png");
-
-        &.ui-captures {
-          @include piece("#{$name}/set30.png");
-        }
-    }
-
-    .size3 {
-        @include piece("#{$name}/set40.png");
-    }
-
-    .size4 {
-        @include piece("#{$name}/set50.png");
-    }
-
-    .size5 {
-        @include piece("#{$name}/set60.png");
-    }
-
-    .size6 {
-        @include piece("#{$name}/set80.png");
-    }
-
-    @media only screen and (max-width: 540px) 
-    {
-        .size6 {
-            @include piece("#{$name}/set60.png");
-        }
-    }
-
-    @media only screen and (max-width: 450px) 
-    {
-        .size5 {
-            @include piece("#{$name}/set50.png");
-        }
-
-        .size6 {
-            @include piece("#{$name}/set50.png");
-        }
-    }
-
-    @media only screen and (max-width: 360px) 
-    {
-        .size4 {
-            @include piece("#{$name}/set40.png");
-        }
-
-        .size5 {
-            @include piece("#{$name}/set40.png");
-        }
-
-        .size6 {
-            @include piece("#{$name}/set40.png");
-        }
-    }
-
-    @media only screen and (max-width: 320px) 
-    {
-        .size3 {
-            @include piece("#{$name}/set30.png");
-        }
-
-        .size4 {
-            @include piece("#{$name}/set30.png");
-        }
-
-        .size5 {
-            @include piece("#{$name}/set30.png");
-        }
-
-        .size6 {
-            @include piece("#{$name}/set30.png");
+@mixin makeSet($name, $load: true) {
+    .#{$name} {
+        @each $cname, $ccode in $pcolors {
+            .#{$cname} {
+                @each $pname, $pcode in $pnames {
+                    @include piece($name, $ccode, $pname, $pcode, $load);
+                }
+            }
         }
     }
 }

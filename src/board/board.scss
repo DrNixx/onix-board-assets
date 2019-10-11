@@ -1,0 +1,6 @@
+@import "../common/extends";
+@import "../common/functions";
+@import "board-2d";
+@import "coords-colors";
+
+@include coords-colors;

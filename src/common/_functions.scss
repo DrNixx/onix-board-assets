@@ -24,3 +24,20 @@
     }
     @return $remValues;
 }
+
+@function srandom($base) {
+    @return $base - random($base) * 2;
+}
+
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+/// Get a z-index value from a layer name
+/// @access public
+/// @param {String} $layer - Layer’s name
+/// @return {Number}
+/// @require $z-indexes
+@function z($layer) {
+  @return map-get($z-indexes, $layer);
+}

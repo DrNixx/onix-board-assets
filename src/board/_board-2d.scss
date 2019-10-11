@@ -1,0 +1,9 @@
+@each $board in $boardFiles {
+  .#{map-get($board, "code")} {
+    &.is2d, & .is2d {
+      cg-board {
+        background-image: url(#{map-get($board, "url")});
+      }
+    }
+  }
+}

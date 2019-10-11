@@ -1,0 +1,19 @@
+{
+    "boardFiles": [
+        { "code": "blue-marble", "name": "Blue marble", "url": "blue-marble/board.png" },
+        { "code": "cedar", "name": "Cedar", "url": "cedar/board.png" },
+        { "code": "color-blue", "name": "Color blue", "url": "color-blue/board.svg" },
+        { "code": "color-brown", "name": "Color brown", "url": "color-brown/board.svg" },
+        { "code": "color-gray", "name": "Color gray", "url": "color-gray/board.png" },
+        { "code": "color-green", "name": "Color green", "url": "color-green/board.svg" },
+        { "code": "color-purple", "name": "Color purple", "url": "color-purple/board.svg" },
+        { "code": "eml", "name": "Elements", "url": "eml/board.png" },
+        { "code": "granite", "name": "Granite", "url": "granite/board.png" },
+        { "code": "green-marble", "name": "Green marble", "url": "green-marble/board.png" },
+        { "code": "red-marble", "name": "Red marble", "url": "red-marble/board.png" },
+        { "code": "red-wood", "name": "Red wood", "url": "red-wood/board.png" },
+        { "code": "rust-metal", "name": "Rust metal", "url": "rust-metal/board.png" },
+        { "code": "tan-marble", "name": "Tan marble", "url": "tan-marble/board.png" },
+        { "code": "walnut", "name": "Walnut", "url": "walnut/board.png" }
+    ]
+}
