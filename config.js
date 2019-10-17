@@ -1,5 +1,7 @@
-export const PRODUCTION = process.env.NODE_ENV == 'production'; // eslint-disable-line
+const PRODUCTION = process.env.NODE_ENV == 'production'; // eslint-disable-line
 
-export const hmrEnabled = true;
+module.exports = {};
 
-export const shouldCompressImages = PRODUCTION;
+module.exports.PRODUCTION = PRODUCTION;
+module.exports.hmrEnabled = true;
+module.exports.shouldCompressImages = PRODUCTION;

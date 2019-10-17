@@ -1,14 +1,16 @@
-import gulpWatch from 'gulp-watch';
+const gulpWatch = require('gulp-watch');
 
-import PATHS from '../paths';
-import html from './html';
-import pieces from './pieces';
-import boards from './boards';
-import common from './common';
+const PATHS = require('../paths');
+const html = require('./html');
+const pieces = require('./pieces');
+const boards = require('./boards');
+const common = require('./common');
 
-export default function watch() {
+module.exports = function() {
 	gulpWatch([PATHS.watch.nunj], html);
 	gulpWatch([PATHS.watch.pieces], pieces);
 	gulpWatch([PATHS.watch.boards], boards);
 	gulpWatch([PATHS.watch.common], common);
 }
+
+module.exports.displayName = 'watch';

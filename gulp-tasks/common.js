@@ -1,22 +1,22 @@
-import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import sass from 'gulp-sass';
-import syntax from 'postcss-scss';
-import postcss from 'gulp-postcss';
-import autoprefixer from 'autoprefixer';
-import assets from 'postcss-assets';
-import fonts from 'postcss-font-magician';
-import cssnano from 'cssnano';
-import inlineSVG from 'postcss-inline-svg';
-import sourcemaps from 'gulp-sourcemaps';
-import cache from 'gulp-cached';
-import rename from 'gulp-rename';
-import cleanCSS from 'gulp-clean-css';
+const gulp = require('gulp');
+const gulpif = require('gulp-if');
+const sass = require('gulp-sass');
+const syntax = require('postcss-scss');
+const postcss = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const assets = require('postcss-assets');
+const fonts = require('postcss-font-magician');
+const cssnano = require('cssnano');
+const inlineSVG = require('postcss-inline-svg');
+const sourcemaps = require('gulp-sourcemaps');
+const cache = require('gulp-cached');
+const rename = require('gulp-rename');
+const cleanCSS = require('gulp-clean-css');
 
-import { PRODUCTION } from '../config';
-import PATHS from '../paths';
+const { PRODUCTION } = require('../config');
+const PATHS = require('../paths');
 
-export default function common() {
+module.exports = function() {
     var pre = [assets({basePath: 'public/', loadPaths: ['static/img/', 'static/fonts/']})];
     var post = [inlineSVG, autoprefixer, fonts];
     var compress = [cssnano];
@@ -46,3 +46,5 @@ export default function common() {
 			)
         ); 
 }
+
+module.exports.displayName = 'common';

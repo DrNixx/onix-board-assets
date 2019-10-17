@@ -1,12 +1,12 @@
-﻿import gulp from 'gulp';
-import clean from './gulp-tasks/clean';
-import common from './gulp-tasks/common';
-import pieces from './gulp-tasks/pieces';
-import boards from './gulp-tasks/boards';
-import html from './gulp-tasks/html';
-import vendor from './gulp-tasks/vendor';
-import watch from './gulp-tasks/watch';
-import server from './gulp-tasks/server';
+﻿const gulp = require('gulp');
+const clean = require('./gulp-tasks/clean');
+const common = require('./gulp-tasks/common');
+const pieces = require('./gulp-tasks/pieces');
+const boards = require('./gulp-tasks/boards');
+const html = require('./gulp-tasks/html');
+const vendor = require('./gulp-tasks/vendor');
+const watch = require('./gulp-tasks/watch');
+const server = require('./gulp-tasks/server');
 
 const { series, parallel } = require('gulp');
 

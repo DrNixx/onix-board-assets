@@ -1,7 +1,7 @@
-import Assets from 'assets';
-import path from 'path';
+const Assets = require('assets');
+const path = require('path');
 
-import PATHS from '../../../paths';
+const PATHS = require('../../../paths');
 
 const resolver = new Assets();
 
@@ -25,4 +25,4 @@ function InlineExtension() {
 	};
 }
 
-export const inlineExtension = new InlineExtension();
+module.exports.inlineExtension = new InlineExtension();

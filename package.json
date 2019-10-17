@@ -28,10 +28,6 @@
   "homepage": "https://github.com/DrNixx/onix-board-assets#readme",
   "devDependencies": {
     "autoprefixer": "^9.6.4",
-    "babel-core": "^6.26.3",
-    "babel-eslint": "^8.2.3",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.7.0",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.24.4",
     "chessground": "^7.6.10",
