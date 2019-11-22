@@ -1,6 +1,6 @@
 {
   "name": "onix-board-assets",
-  "version": "3.2.19",
+  "version": "3.2.20",
   "description": "Chess board assets",
   "main": "index.js",
   "scripts": {
@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/DrNixx/onix-board-assets#readme",
   "devDependencies": {
-    "autoprefixer": "^9.6.4",
+    "autoprefixer": "^9.7.2",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.24.4",
     "chessground": "^7.6.10",
@@ -50,7 +50,7 @@
     "gulp-watch": "^5.0.0",
     "node-notifier": "^5.2.1",
     "postcss-assets": "^5.0.0",
-    "postcss-font-magician": "^2.2.2",
+    "postcss-font-magician": "^2.3.1",
     "postcss-inline-svg": "^4.1.0",
     "postcss-scss": "^2.0.0"
   }
