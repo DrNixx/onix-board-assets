@@ -1,6 +1,6 @@
 {
   "name": "onix-board-assets",
-  "version": "3.2.18",
+  "version": "3.2.19",
   "description": "Chess board assets",
   "main": "index.js",
   "scripts": {
@@ -39,7 +39,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-if": "^3.0.0",
     "gulp-jsbeautifier": "^2.1.2",
-    "gulp-nunjucks-api": "^0.8.0",
+    "gulp-nunjucks-api": "git+https://github.com/DrNixx/gulp-nunjucks-api.git",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
