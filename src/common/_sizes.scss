@@ -6,79 +6,8 @@
     }
 }
 
-.size1 {
-    @include board-set(20px, 16px, 8px);
-}
-
-.size2 {
-    @include board-set(30px, 18px, 9px);
-
-}
-
-.size3 {
-    @include board-set(40px, 18px, 9px);
-}
-
-.size4 {
-    @include board-set(50px, 22px, 10px);
-}
-
-.size5 {
-    @include board-set(60px, 27px, 11px);
-}
-
-.size6 {
-    @include board-set(80px, 32px, 12px);
-}
-
-@media only screen and (max-width: 540px)
-{
-    .size6 {
-        @include board-set(60px, 0, 11px);
-    }
-}
-
-@media only screen and (max-width: 450px) 
-{
-    .size5 {
-        @include board-set(50px, 0, 10px);
-    }
-
-    .size6 {
-        @include board-set(50px, 0, 10px);
-    }
-}
-
-@media only screen and (max-width: 360px) 
-{
-    .size4 {
-        @include board-set(40px, 0, 9px);
-    }
-
-    .size5 {
-        @include board-set(40px, 0, 9px);
-    }
-
-    .size6 {
-        @include board-set(40px, 0, 9px);
-    }
-}
-
-@media only screen and (max-width: 320px) 
-{
-    .size3 {
-        @include board-set(30px, 0, 9px);
-    }
-
-    .size4 {
-        @include board-set(30px, 0, 9px);
-    }
-
-    .size5 {
-        @include board-set(30px, 0, 9px);
-    }
-
-    .size6 {
-        @include board-set(30px, 0, 9px);
+@each $board in $boardSizes {
+    .#{map-get($board, "code")} {
+        @include board-set(map-get($board, "square"), map-get($board, "frame"), map-get($board, "font"));
     }
 }

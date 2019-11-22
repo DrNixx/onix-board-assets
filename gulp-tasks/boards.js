@@ -32,7 +32,7 @@ module.exports = function() {
 
     return gulp.src(PATHS.src.boardscss)
         .pipe(postcss(pre, {syntax: syntax}))
-        .pipe(sassVars(boardFiles, { verbose: false }))
+        .pipe(sassVars(boardFiles, { verbose: true }))
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss(post))
         .pipe(

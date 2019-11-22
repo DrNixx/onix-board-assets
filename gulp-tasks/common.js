@@ -1,6 +1,7 @@
 const gulp = require('gulp');
 const gulpif = require('gulp-if');
 const sass = require('gulp-sass');
+const sassVars = require('gulp-sass-vars');
 const syntax = require('postcss-scss');
 const postcss = require('gulp-postcss');
 const autoprefixer = require('autoprefixer');
@@ -16,6 +17,8 @@ const cleanCSS = require('gulp-clean-css');
 const { PRODUCTION } = require('../config');
 const PATHS = require('../paths');
 
+const boardFiles = require('../src/board/boards.json');
+
 module.exports = function() {
     var pre = [assets({basePath: 'public/', loadPaths: ['static/img/', 'static/fonts/']})];
     var post = [inlineSVG, autoprefixer, fonts];
@@ -23,6 +26,7 @@ module.exports = function() {
 
     return gulp.src(PATHS.src.common)
         .pipe(postcss(pre, {syntax: syntax}))
+        .pipe(sassVars(boardFiles, { verbose: true }))
         .pipe(sass().on("error", sass.logError))
         .pipe(postcss(post))
         .pipe(gulp.dest(PATHS.build.assets))
