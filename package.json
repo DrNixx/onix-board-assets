@@ -44,7 +44,7 @@
     "gulp-postcss": "^8.0.0",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sass-vars": "^1.3.0",
+    "gulp-sass-vars": "git+https://github.com/DrNixx/gulp-sass-vars.git",
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^2.1.2",
     "gulp-watch": "^5.0.0",
