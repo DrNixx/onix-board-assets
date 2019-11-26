@@ -17,13 +17,13 @@
         { "code": "walnut", "name": "Walnut", "url": "walnut/board.png" }
     ],
     "boardSizes": [
-        { "code": "size1", "name": "160x160", "square": "20px", "frame": "16px", "font": "8px" },
-        { "code": "size2", "name": "240x240", "square": "30px", "frame": "17px", "font": "8px" },
-        { "code": "size3", "name": "320x320", "square": "40px", "frame": "18px", "font": "9px" },
-        { "code": "size4", "name": "400x400", "square": "50px", "frame": "22px", "font": "10px" },
-        { "code": "size5", "name": "480x480", "square": "60px", "frame": "28px", "font": "11px" },
-        { "code": "size6", "name": "560x560", "square": "70px", "frame": "32px", "font": "12px" },
-        { "code": "size7", "name": "640x640", "square": "80px", "frame": "36px", "font": "13px" },
-        { "code": "size8", "name": "720x720", "square": "90px", "frame": "42px", "font": "14px" }
+        { "code": "size1", "name": "160x160", "idx": 1, "square": "20px", "frame": "16px", "font": "8px" },
+        { "code": "size2", "name": "240x240", "idx": 2, "square": "30px", "frame": "17px", "font": "8px" },
+        { "code": "size3", "name": "320x320", "idx": 3, "square": "40px", "frame": "18px", "font": "9px" },
+        { "code": "size4", "name": "400x400", "idx": 4, "square": "50px", "frame": "22px", "font": "10px" },
+        { "code": "size5", "name": "480x480", "idx": 5, "square": "60px", "frame": "28px", "font": "11px" },
+        { "code": "size6", "name": "560x560", "idx": 6, "square": "70px", "frame": "32px", "font": "12px" },
+        { "code": "size7", "name": "640x640", "idx": 7, "square": "80px", "frame": "36px", "font": "13px" },
+        { "code": "size8", "name": "720x720", "idx": 8, "square": "90px", "frame": "42px", "font": "14px" }
     ]
 }

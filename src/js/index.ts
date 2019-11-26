@@ -1,0 +1,1 @@
+export { BoardSizeClass, BoardSize } from './Size';

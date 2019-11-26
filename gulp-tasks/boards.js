@@ -28,7 +28,7 @@ module.exports = function() {
         .pipe(gulp.dest(PATHS.build.boards));
 
     gulp.src(PATHS.src.boardsjson)
-        .pipe(gulp.dest(PATHS.build.boards));
+        .pipe(gulp.dest(PATHS.build.scripts));
 
     return gulp.src(PATHS.src.boardscss)
         .pipe(postcss(pre, {syntax: syntax}))

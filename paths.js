@@ -9,6 +9,7 @@ module.exports = {
 		assets: assets + '/',
 		pieces: assets + '/pieces/',
 		boards: assets + '/boards/',
+		scripts: base + '/js/',
 		images: base + '/media/img/',
 		fonts: base + '/media/fonts/',
 		sprites: base + '/media/img/sprites/',
@@ -16,6 +17,7 @@ module.exports = {
 		videos: base + '/media/video/',
 	},
 	src: {
+		scripts: './src/js/index.ts',
 		templates: './src/templates/',
 		nunj: 'src/templates/*.nunj',
 		pieces: './src/pieces/**/*.{png,jpg,jpeg,gif,svg}',
@@ -26,6 +28,7 @@ module.exports = {
 		boardsjson: './src/board/boards.json',
 		boardscss: ['./src/board/*.scss', '!./src/board/_*.scss'],
 		common: ['./src/common/*.scss', '!./src/common/_*.scss'],
+		tests: './src/test/index.ts',
 	},
 	watch: {
 		nunj: 'src/templates/**/*.nunj',

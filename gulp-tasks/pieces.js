@@ -56,7 +56,7 @@ module.exports = function() {
         .pipe(gulpif(PRODUCTION,gulp.dest(PATHS.build.pieces)));
 
     return gulp.src(PATHS.src.piecesjson)
-        .pipe(gulp.dest(PATHS.build.pieces));
+        .pipe(gulp.dest(PATHS.build.scripts));
 }
 
 module.exports.displayName = 'pieces';
