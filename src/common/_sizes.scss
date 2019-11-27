@@ -1,7 +1,7 @@
 ﻿
 @mixin board-set($square-size, $frame-size, $label-font-size) {
     .board-container {
-        min-width: $square-size * 8;
+        width: $square-size * 8;
         max-width: 100%;
     }
 }
