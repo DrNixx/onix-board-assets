@@ -12,12 +12,14 @@
         {"code": "leipzig", "name": "Leipzig"},
         {"code": "letter", "name": "Letter"},
         {"code": "maestro", "name": "Maestro"},
+        {"code": "magnetic", "name": "Magnetic"},
         {"code": "merida", "name": "Merida"},
         {"code": "pirouetti", "name": "Pirouetti"},
         {"code": "pixel", "name": "Pixel"},
         {"code": "reillycraig", "name": "Reilly Craig"},
         {"code": "riohacha", "name": "Riohacha"},
         {"code": "shapes", "name": "Shapes"},
+        {"code": "smart", "name": "Smart"},
         {"code": "spatial", "name": "Spatial"}
     ]
 }
