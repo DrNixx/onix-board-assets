@@ -1,5 +1,8 @@
 ﻿$rem-base: 16px !default;
 
+$pcolors: ("white": "w", "black": "b");
+$pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rook": "R", "queen": "Q", "king": "K");
+
 // STRIP UNIT
 // It strips the unit of measure and returns it
 @function strip-unit($num) {

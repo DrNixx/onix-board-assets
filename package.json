@@ -50,6 +50,7 @@
     "gulp-typescript": "^6.0.0-alpha.1",
     "gulp-uglify": "^3.0.0",
     "gulp-watch": "^5.0.0",
+    "mime": "^2.4.4",
     "node-notifier": "^6.0.0",
     "postcss-assets": "^5.0.0",
     "postcss-font-magician": "^2.3.1",

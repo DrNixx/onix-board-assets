@@ -19,6 +19,32 @@ const PATHS = require('../paths');
 
 const boardFiles = require('../src/board/boards.json');
 
+function sassFunctions(options) {
+    options = options || {};
+    options.base = options.base || process.cwd();
+  
+    var fs        = require('fs');
+    var path      = require('path');
+    var types     = require('node-sass').types;
+    var mime    = require('mime');
+  
+    mime.define( {"image/x-icon": ["cur", "*ico"]} );
+
+    var funcs = {};
+  
+    funcs['inline-image($file)'] = function(file) {
+        var file = path.resolve(options.base, file.getValue());
+        var fileMime = mime.getType(file);
+        var data = fs.readFileSync(file);
+        var buffer = Buffer.from(data);
+        var str = buffer.toString('base64');
+        str = 'url("data:' + fileMime  + ';base64,' + str +'")';
+        return types.String(str);
+    };
+  
+    return funcs;
+}
+
 module.exports = function() {
     var pre = [assets({basePath: 'public/', loadPaths: ['static/img/', 'static/fonts/']})];
     var post = [inlineSVG, autoprefixer, fonts];
@@ -27,7 +53,9 @@ module.exports = function() {
     return gulp.src(PATHS.src.common)
         .pipe(postcss(pre, {syntax: syntax}))
         .pipe(sassVars(boardFiles, { verbose: false }))
-        .pipe(sass().on("error", sass.logError))
+        .pipe(sass({ 
+            functions: sassFunctions({ base: PATHS.src.commondir }) 
+        }).on("error", sass.logError))
         .pipe(postcss(post))
         .pipe(gulp.dest(PATHS.build.assets))
         .pipe(

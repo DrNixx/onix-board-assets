@@ -28,6 +28,7 @@ module.exports = {
 		boardsjson: './src/board/boards.json',
 		boardscss: ['./src/board/*.scss', '!./src/board/_*.scss'],
 		common: ['./src/common/*.scss', '!./src/common/_*.scss'],
+		commondir: './src/common/',
 		tests: './src/test/index.ts',
 	},
 	watch: {
