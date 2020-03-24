@@ -1,4 +1,5 @@
 /.vscode
+/.github
 /gulp-tasks
 /node_modules
 /public

@@ -1,0 +1,14 @@
+{% extends "./ext/base.nunj" %}
+{% from "parts/editorBoard.nunj" import editorBoard %}
+{% block title %}Pieces example {{ super() }}{% endblock title %}
+
+{% block stylesheets %}
+	{{ super() }}
+	<link rel="stylesheet" href="assets/pieces/external.css" />
+{% endblock stylesheets %}
+
+{% block content %}
+	<div class="pos-builder is2d color-brown" style="width: 30%;">
+	    {{ editorBoard('alpha', 'Alpha') }}
+	</div>
+{% endblock content %}

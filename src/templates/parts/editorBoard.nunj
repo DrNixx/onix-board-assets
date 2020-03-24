@@ -1,0 +1,101 @@
+{% macro editorBoard(code, name) %}
+	<h2>{{ name }}</h2>
+	
+	<div class="{{ code }}">
+		<div class="holder-container">
+			<div class="spare spare-top spare-black">
+				<div class="no-square pointer selected-square">
+					<div>
+						<div class="pointer" data-kind="piece"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black king" data-kind="piece" data-color="black" data-role="king"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black queen" data-kind="piece" data-color="black" data-role="queen"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black rook" data-kind="piece" data-color="black" data-role="rook"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black bishop" data-kind="piece" data-color="black" data-role="bishop"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black knight" data-kind="piece" data-color="black" data-role="knight"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black pawn" data-kind="piece" data-color="black" data-role="pawn"></div>
+					</div>
+				</div>
+				<div class="no-square trash">
+					<div>
+						<div class="trash" data-kind="piece"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="main-board">
+			<div id="{{ code }}" class="cg-wrap"></div>
+		</div>
+		<div class="holder-container trash-cursor">
+			<div class="spare spare-bottom spare-white">
+				<div class="no-square pointer selected-square">
+					<div>
+						<div class="pointer" data-kind="piece"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black king" data-kind="piece" data-color="black" data-role="king"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black queen" data-kind="piece" data-color="black" data-role="queen"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black rook" data-kind="piece" data-color="black" data-role="rook"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black bishop" data-kind="piece" data-color="black" data-role="bishop"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black knight" data-kind="piece" data-color="black" data-role="knight"></div>
+					</div>
+				</div>
+				<div class="no-square">
+					<div>
+						<div class="black pawn" data-kind="piece" data-color="black" data-role="pawn"></div>
+					</div>
+				</div>
+				<div class="no-square trash">
+					<div>
+						<div class="trash" data-kind="piece"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<script>
+    	var cg = Chessground(document.getElementById('{{ code }}'));
+    </script>
+{% endmacro %}

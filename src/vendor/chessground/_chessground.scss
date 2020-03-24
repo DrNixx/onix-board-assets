@@ -9,7 +9,7 @@ cg-board {
     cursor: pointer;
   }
 }
-square {
+square, [data-kind="square"] {
   position: absolute;
   width: 12.5%;
   height: 12.5%;
@@ -51,7 +51,7 @@ square {
     opacity: 0.98;
   }
 }
-piece {
+piece, [data-kind="piece"] {
   position: absolute;
   top: 0;
   left: 0;
