@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/DrNixx/onix-board-assets#readme",
   "devDependencies": {
-    "autoprefixer": "^9.7.2",
+    "autoprefixer": "^9.7.5",
     "breakpoint-sass": "^2.7.1",
     "browser-sync": "^2.24.4",
     "chessground": "^7.6.10",
@@ -58,7 +58,7 @@
     "postcss-scss": "^2.0.0",
     "ts-loader": "^6.2.2",
     "typescript": "^3.7.2",
-    "webpack": "^4.42.0",
+    "webpack": "^4.42.1",
     "webpack-cli": "^3.3.10",
     "webpack-dev-middleware": "^3.7.2",
     "webpack-hot-middleware": "^2.25.0"

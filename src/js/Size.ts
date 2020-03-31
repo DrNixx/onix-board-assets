@@ -1,4 +1,4 @@
-export const BoardSizeClass: string[] = ["size1", "size1", "size2", "size3", "size4", "size5", "size6", "size7", "size8"];
+export const BoardSizeClass: string[] = ["size4", "size1", "size2", "size3", "size4", "size5", "size6", "size7", "size8"];
 
 /**
  * Размеры доски
