@@ -1,0 +1,17 @@
+@import 'functions';
+
+.cursor-trash { 
+    cursor: inline-image('../images/cursors/trash.cur'), auto;
+}
+
+.cursor-pointer { 
+    cursor: pointer;
+}
+
+@each $cname, $ccode in $pcolors {
+    @each $pname, $pcode in $pnames {
+        .cursor-#{$cname}-#{$pname} {
+            cursor: inline-image('../images/cursors/#{$cname}-#{$pname}.cur'), auto;
+        }
+    }
+}
