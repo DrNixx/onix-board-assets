@@ -17,7 +17,7 @@ const PATHS = require('../paths');
 
 module.exports = function() {
     return gulp.src([
-        './node_modules/chessground/dist/*.*'
+        './src/vendor/chessground/js/chessground.js'
         ])
         .pipe(gulp.dest(PATHS.build.assets + '/vendor/chessground/'));
 }
