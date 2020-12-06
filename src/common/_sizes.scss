@@ -4,6 +4,13 @@
         width: $square-size * 8;
         max-width: 100%;
     }
+
+    &.captures {
+        [data-kind="square"] {
+            height: $square-size;
+            width: $square-size;
+        }
+    }
 }
 
 @each $board in $boardSizes {
