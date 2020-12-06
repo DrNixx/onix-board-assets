@@ -1,6 +1,6 @@
 {
   "name": "onix-board-assets",
-  "version": "4.3.1",
+  "version": "4.4.0",
   "description": "Chess board assets",
   "main": "dist/js/index.js",
   "scripts": {
