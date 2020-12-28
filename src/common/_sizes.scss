@@ -19,6 +19,14 @@
     & .board-width {
         width: $square-size * 8;
     }
+
+    & .board-height-max {
+        max-height: $square-size * 8;
+    }
+
+    & .board-width-max {
+        max-width: $square-size * 8;
+    }
 }
 
 @each $board in $boardSizes {
