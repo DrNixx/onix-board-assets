@@ -7,7 +7,7 @@
         { "code": "color-gray", "name": "Color gray", "url": "color-gray/board.png" },
         { "code": "color-green", "name": "Color green", "url": "color-green/board.svg" },
         { "code": "color-purple", "name": "Color purple", "url": "color-purple/board.svg" },
-        { "code": "eml", "name": "Elements", "url": "elm/board.png" },
+        { "code": "elm", "name": "Elements", "url": "elm/board.png" },
         { "code": "granite", "name": "Granite", "url": "granite/board.png" },
         { "code": "green-marble", "name": "Green marble", "url": "green-marble/board.png" },
         { "code": "red-marble", "name": "Red marble", "url": "red-marble/board.png" },

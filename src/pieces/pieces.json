@@ -6,11 +6,16 @@
         {"code": "chess7", "name": "Chess7"},
         {"code": "chessnut", "name": "Chessnut"},
         {"code": "companion", "name": "Companion"},
+        {"code": "dubrovny", "name": "Dubrovny"},
         {"code": "fantasy", "name": "Fantasy"},
         {"code": "fresca", "name": "Fresca"},
+        {"code": "gioco", "name": "Gioco"},
+        {"code": "governor", "name": "Governor"},
+        {"code": "icpieces", "name": "Instant Chess"},
         {"code": "kosal", "name": "Kosal"},
         {"code": "leipzig", "name": "Leipzig"},
         {"code": "letter", "name": "Letter"},
+        {"code": "libra", "name": "libra"},
         {"code": "maestro", "name": "Maestro"},
         {"code": "magnetic", "name": "Magnetic"},
         {"code": "merida", "name": "Merida"},
@@ -20,6 +25,8 @@
         {"code": "riohacha", "name": "Riohacha"},
         {"code": "shapes", "name": "Shapes"},
         {"code": "smart", "name": "Smart"},
-        {"code": "spatial", "name": "Spatial"}
+        {"code": "spatial", "name": "Spatial"},
+        {"code": "staunty", "name": "Staunty"},
+        {"code": "tatiana", "name": "Tatiana"}
     ]
 }
