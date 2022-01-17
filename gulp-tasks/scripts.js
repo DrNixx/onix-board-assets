@@ -1,26 +1,24 @@
-const PATHS = require('../paths');
-
-const gulp = require('gulp');
-const ts = require('gulp-typescript');
-const sourcemaps = require('gulp-sourcemaps');
 const merge = require('merge2');
 
-const tsProj = ts.createProject('tsconfig.json');
-
-module.exports = function() {
-        const reporter = ts.reporter.fullReporter();
+module.exports = function (gulp, plugins, PATHS, PRODUCTION) {
+    const task = function () {
+        const tsProj = plugins.typescript.createProject('tsconfig.json');
+        const reporter = plugins.typescript.reporter.fullReporter();
 
         const tsResult = gulp.src(['src/js/**/*.ts', 'src/js/**/*.tsx'])
-            .pipe(sourcemaps.init())
+            .pipe(plugins.sourcemaps.init())
             .pipe(tsProj(reporter));
 
         return merge([
             tsResult.dts
                 .pipe(gulp.dest(PATHS.build.scripts)),
             tsResult.js
-                .pipe(sourcemaps.write('.'))
+                .pipe(plugins.sourcemaps.write('.'))
                 .pipe(gulp.dest(PATHS.build.scripts))
         ]);
-}
+    };
 
-module.exports.displayName = 'scripts';
+    task.displayName = 'scripts';
+
+    return task;
+};

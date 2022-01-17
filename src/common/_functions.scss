@@ -1,4 +1,6 @@
-﻿$rem-base: 16px !default;
+﻿@use "sass:math";
+
+$rem-base: 16px !default;
 
 $pcolors: ("white": "w", "black": "b");
 $pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rook": "R", "queen": "Q", "king": "K");
@@ -6,7 +8,7 @@ $pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rook": "R", "queen": "Q", 
 // STRIP UNIT
 // It strips the unit of measure and returns it
 @function strip-unit($num) {
-    @return $num / ($num * 0 + 1);
+    @return math.div($num, ($num * 0 + 1));
 }
 
 // CONVERT TO REM
@@ -30,10 +32,6 @@ $pnames: ("pawn": "P", "knight": "N", "bishop": "B", "rook": "R", "queen": "Q", 
 
 @function srandom($base) {
     @return $base - random($base) * 2;
-}
-
-@function strip-unit($value) {
-    @return $value / ($value * 0 + 1);
 }
 
 /// Get a z-index value from a layer name

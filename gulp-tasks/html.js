@@ -1,25 +1,21 @@
-const gulp = require('gulp');
 const log = require('fancy-log');
-const nunjucksRender = require('gulp-nunjucks-api');
 const notifier = require('node-notifier');
-const plumber = require('gulp-plumber');
-const beautify = require('gulp-jsbeautifier');
 
-const { PRODUCTION } = require('../config');
-const PATHS = require('../paths');
 const extensions = require('../src/templates/lib/extensions.js');
 const filters = require('../src/templates/lib/filters.js');
 const functions = require('../src/templates/lib/functions.js');
-const gulpif = require('gulp-if');
 
 const globalData = require('../global-data.json');
 const pieces = require('../src/pieces/pieces.json');
 
-module.exports = function() {
-	return gulp
+module.exports.displayName = 'html';
+
+module.exports = function (gulp, plugins, PATHS, PRODUCTION) {
+    const task = function () {
+        return gulp
 		.src(PATHS.src.nunj)
 		.pipe(
-			plumber({
+			plugins.plumber({
 				errorHandler: function(err) {
 					log(err.message);
 					notifier.notify({
@@ -30,7 +26,7 @@ module.exports = function() {
 			})
 		)
 		.pipe(
-			nunjucksRender({
+			plugins.nunjucksRender({
 				src: PATHS.src.templates,
 				data: Object.assign(
 					{
@@ -48,15 +44,18 @@ module.exports = function() {
 			})
 		)
 		.pipe(
-			gulpif(
+			plugins.gif(
 				PRODUCTION,
-				beautify({
+				plugins.jsbeautifier({
 					max_preserve_newlines: 1,
 					wrap_line_length: 0,
 				})
 			)
 		)
 		.pipe(gulp.dest(PATHS.build.html));
-}
+    };
 
-module.exports.displayName = 'html';
+    task.displayName = 'html';
+
+    return task;
+};

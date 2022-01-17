@@ -1,10 +1,12 @@
 const gulpWatch = require('gulp-watch');
+const getTask = require('./functions').getTask;
 
-const PATHS = require('../paths');
-const html = require('./html');
-const pieces = require('./pieces');
-const boards = require('./boards');
-const common = require('./common');
+const PATHS_OPTIONS = require('./paths');
+
+const html = getTask('', 'html', PATHS_OPTIONS);
+const pieces = getTask('', 'pieces', PATHS_OPTIONS);
+const boards = getTask('', 'boards', PATHS_OPTIONS);
+const common = getTask('', 'common', PATHS_OPTIONS);
 
 module.exports = function() {
 	gulpWatch([PATHS.watch.nunj], html);

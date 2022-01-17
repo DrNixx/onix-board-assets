@@ -1,16 +1,22 @@
 ﻿const gulp = require('gulp');
-const clean = require('./gulp-tasks/clean');
-const common = require('./gulp-tasks/common');
-const pieces = require('./gulp-tasks/pieces');
-const boards = require('./gulp-tasks/boards');
-const html = require('./gulp-tasks/html');
-const vendor = require('./gulp-tasks/vendor');
-const scripts = require('./gulp-tasks/scripts');
+const { series, parallel } = require('gulp');
+
 const webpack = require('./gulp-tasks/webpack');
 const watch = require('./gulp-tasks/watch');
 const server = require('./gulp-tasks/server');
 
-const { series, parallel } = require('gulp');
+const getTask = require('./gulp-tasks/functions').getTask;
+
+const PATHS_OPTIONS = require('./paths');
+
+const clean = getTask('', 'clean', PATHS_OPTIONS);
+const common = getTask('', 'common', PATHS_OPTIONS);
+const boards = getTask('', 'boards', PATHS_OPTIONS);
+const pieces = getTask('', 'pieces', PATHS_OPTIONS);
+const scripts = getTask('', 'scripts', PATHS_OPTIONS);
+const html = getTask('', 'html', PATHS_OPTIONS);
+const vendor = getTask('', 'vendor', PATHS_OPTIONS);
+
 
 let build = series(clean, parallel(common, pieces, boards, vendor, html));
 gulp.task("build", build, function() {
