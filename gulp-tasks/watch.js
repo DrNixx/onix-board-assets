@@ -1,7 +1,7 @@
 const gulpWatch = require('gulp-watch');
 const getTask = require('./functions').getTask;
 
-const PATHS_OPTIONS = require('./paths');
+const PATHS_OPTIONS = require('../paths');
 
 const html = getTask('', 'html', PATHS_OPTIONS);
 const pieces = getTask('', 'pieces', PATHS_OPTIONS);
