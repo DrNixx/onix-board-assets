@@ -33,6 +33,6 @@ export type BoardFileItem = {
 }
 
 export type BoardConfig = {
-    boardFiles: BoardFileItem;
-    boardSizes: BoardSizeItem;
+    boardFiles: BoardFileItem[];
+    boardSizes: BoardSizeItem[];
 }
