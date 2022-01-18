@@ -1,1 +1,1 @@
-export { BoardSizeClass, BoardSizeClasses, BoardSize, BoardSizeItem, BoardFileItem, BoardConfig } from './BoardConfig';
+export { BoardSizeClass, BoardSizeClasses, BoardSize, BoardSizeItem, BoardFileItem, BoardConfig, PieceFaceItem, PiecesConfig } from './BoardConfig';

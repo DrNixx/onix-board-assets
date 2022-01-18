@@ -36,3 +36,12 @@ export type BoardConfig = {
     boardFiles: BoardFileItem[];
     boardSizes: BoardSizeItem[];
 }
+
+export type PieceFaceItem = {
+    code: string;
+    name: string;
+}
+
+export type PiecesConfig = {
+    pieceFaces: PieceFaceItem[];
+}
