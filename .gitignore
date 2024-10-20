@@ -3,6 +3,7 @@
 /dist
 /public
 .vscode
+.idea
 /**/*.css
 /**/*.min.css
 /**/*.css.map
